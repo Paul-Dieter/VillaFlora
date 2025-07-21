@@ -172,101 +172,110 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="section booking">
-        <div class="container">
-            <h2 class="section-title">Book Your Stay</h2>
-            <div class="booking-container fade-in">
-                <div class="form-header">
-                    <h2>Fill out the details below to reserve your perfect getaway</h2>
-                </div>
-
-                <form id="bookingForm" action="https://formspree.io/f/xanbqavp" method="POST" onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Select Your Dates *</label>
-                        <div class="date-picker">
-                            <div class="calendar-container">
-                                <div class="calendar-header">
-                                    <button type="button" class="month-nav" onclick="changeMonth(-1)">← Previous</button>
-                                    <span id="monthYear"></span>
-                                    <button type="button" class="month-nav" onclick="changeMonth(1)">Next →</button>
-                                </div>
-                                <div class="calendar-grid" id="calendarGrid"></div>
-                            </div>
-                            <input type="hidden" id="checkIn" name="checkIn">
-                            <input type="hidden" id="checkOut" name="checkOut">
-                            <div class="date-display">
-                                <span>Check-in: <span id="checkInDisplay">Not selected</span> | </span>
-                                <span>Check-out: <span id="checkOutDisplay">Not selected</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="adults">Number of Adults *</label>
-                            <select id="adults" name="adults" required>
-                                <option value="" disabled selected>Select adults</option>
-                                <option value="1">1 Adult</option>
-                                <option value="2">2 Adults</option>
-                                <option value="3">3 Adults</option>
-                                <option value="4">4 Adults</option>
-                                <option value="5+">5+ Adults</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="children">Number of Children</label>
-                            <select id="children" name="children">
-                                <option value="0">No Children</option>
-                                <option value="1">1 Child</option>
-                                <option value="2">2 Children</option>
-                                <option value="3">3 Children</option>
-                                <option value="4+">4+ Children</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="requests">Questions or Requests</label>
-                        <textarea id="requests" name="requests"></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="emergencyName">Emergency Contact Name</label>
-                            <input type="text" id="emergencyName" name="emergencyName">
-                        </div>
-                        <div class="form-group">
-                            <label for="emergencyPhone">Emergency Contact Phone</label>
-                            <input type="tel" id="emergencyPhone" name="emergencyPhone">
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit Booking Request</button>
-                </form>
+  <!-- Booking Section -->
+<section id="booking" class="section booking">
+    <div class="container">
+        <h2 class="section-title">Book Your Stay</h2>
+        <div class="booking-container fade-in">
+            <div class="form-header">
+                <h2>Fill out the details below to reserve your perfect getaway</h2>
             </div>
-            <div class="booking-platforms fade-in">
-                <a href="https://www.airbnb.com" target="_blank" class="platform-button">Airbnb</a>
+            <form id="bookingForm" action="https://formspree.io/f/xanbqavp" method="POST" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Select Your Dates *</label>
+                    <div class="date-picker">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button type="button" class="month-nav" onclick="changeMonth(-1)">← Previous</button>
+                                <span id="monthYear"></span>
+                                <button type="button" class="month-nav" onclick="changeMonth(1)">Next →</button>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid"></div>
+                        </div>
+                        <input type="hidden" id="checkIn" name="checkIn">
+                        <input type="hidden" id="checkOut" name="checkOut">
+                        <div class="date-display">
+                            <span>Check-in: <span id="checkInDisplay">Not selected</span> | </span>
+                            <span>Check-out: <span id="checkOutDisplay">Not selected</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adults">Number of Adults *</label>
+                        <select id="adults" name="adults" required>
+                            <option value="" disabled selected>Select adults</option>
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                            <option value="5+">5+ Adults</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Number of Children</label>
+                        <select id="children" name="children">
+                            <option value="0">No Children</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                            <option value="3">3 Children</option>
+                            <option value="4+">4+ Children</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="requests">Questions or Requests</label>
+                    <textarea id="requests" name="requests"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emergencyName">Emergency Contact Name</label>
+                        <input type="text" id="emergencyName" name="emergencyName">
+                    </div>
+                    <div class="form-group">
+                        <label for="emergencyPhone">Emergency Contact Phone</label>
+                        <input type="tel" id="emergencyPhone" name="emergencyPhone">
+                    </div>
+                </div>
+                <!-- Add Formspree hidden fields -->
+                <input type="hidden" name="_subject" value="New Villa Flora Booking Request">
+                <input type="text" name="_honey" style="display:none">
+                <button type="submit" class="submit-btn">Submit Booking Request</button>
+            </form>
+            <div class="popup" id="submissionPopup">
+                <div class="popup-content">
+                    <span class="popup-close" onclick="closePopup()" aria-label="Close popup">✕</span>
+                    <h2>Booking Request Submitted!</h2>
+                    <p>Thank you for your request. We'll contact you within 24 hours to confirm availability and provide payment details.</p>
+                    <button class="cta-button" onclick="closePopup()">Close</button>
+                </div>
             </div>
         </div>
-    </section>
-
+        <div class="booking-platforms fade-in">
+            <a href="https://www.airbnb.com" target="_blank" class="platform-button">Airbnb</a>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

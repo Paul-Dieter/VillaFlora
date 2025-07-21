@@ -256,6 +256,7 @@ function changeMonth(direction) {
     }
 }
 
+// Replace the existing handleSubmit function with this
 function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -274,17 +275,40 @@ function handleSubmit(event) {
     bookingData.nights = nights;
     
     console.log('Booking Data:', bookingData);
-    alert(`Thank you for your booking request!\n\nWe'll contact you at ${bookingData.email} within 24 hours to confirm availability and provide payment details.\n\nStay: ${nights} night(s) from ${selectedCheckIn.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} to ${selectedCheckOut.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`);
     
-    form.reset();
-    selectedCheckIn = null;
-    selectedCheckOut = null;
-    selectingCheckOut = false;
-    updateDateDisplays();
-    generateCalendar();
+    // Submit to Formspree via AJAX
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('submissionPopup').style.display = 'flex';
+            form.reset();
+            selectedCheckIn = null;
+            selectedCheckOut = null;
+            selectingCheckOut = false;
+            updateDateDisplays();
+            generateCalendar();
+        } else {
+            alert('There was an issue submitting your request. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please check your connection and try again.');
+    });
 }
 
-// Initialize calendar
+// Add this new function to handle popup closing
+function closePopup() {
+    document.getElementById('submissionPopup').style.display = 'none';
+}
+
+// Keep the existing initialization code
 document.addEventListener('DOMContentLoaded', () => {
     generateCalendar();
     // Ensure form has correct action
