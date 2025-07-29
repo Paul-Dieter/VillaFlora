@@ -381,6 +381,12 @@ body {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .booking {
+    background-attachment: scroll;
+  }
+}
+
 #booking .section-title {
    color: #fafafa;
 }
